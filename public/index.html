@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="config.js"></script>
+    <script defer src="script.js"></script>
+    <title>Book Comet - Swagger - Pedro Diehl</title>
+</head>
+<body>
+    <h1>Book Comet - Coding Challenge - Swagger</h1>
+    <div class="flex flex-d-col mb30px">
+
+        <!--------- REPONSE DIV --------->
+        <div class="flex flex-d-col separator">
+            <p>RESPONSE</p>
+            <p id="resp"></p>
+        </div>
+
+        <div class="flex">
+            <!--------- BOOK DIV --------->
+            <div id="div-books" class="flex flex-d-col separator">
+                <P>BOOKS - ROUTE</P>
+                <div class="flex flex-d-col mtop30px">
+                    <p class="mtop-std">/api/books/getBooks?order=author</p>
+                    <button class="mtop-std" onclick="apiGet('books', 'author')">Get: Books by Author</button>
+                    <p class="mtop-std">/api/books/getBooks?order=publisher</p>
+                    <button class="mtop-std" onclick="apiGet('books', 'publisher')">Get: Books by Publisher</button>
+                    <p class="mtop-std">/api/books/getBooks?order=id</p>
+                    <button class="mtop-std" onclick="apiGet('books', 'id')">Get: Books by ID</button>
+                </div>
+
+                <div class="flex flex-d-col mtop30px">
+                    <p class="mtop-std">/api/books/postBook</p>
+                    <input class="mtop-std" placeholder="Name" type="text" name="" id="bookName">
+                    <input class="mtop-std" placeholder="Author" type="text" name="" id="bookAuthor">
+                    <input class="mtop-std" placeholder="Publisher" type="text" name="" id="bookPublisher">
+                    <input class="mtop-std" placeholder="Year" type="text" name="" id="bookYear">
+                    <input class="mtop-std" placeholder="Summary" type="text" name="" id="bookSummary">
+                    <button class="mtop-std" onclick="apiPost('books')">Post: Create Book</button>
+                </div>
+
+                <div class="flex flex-d-col mtop30px">
+                    <p class="mtop-std">/api/books/editBook?id=</p>
+                    <input class="mtop-std" placeholder="Book ID to Modify" type="text" name="" id="bookIdModify">
+                    <input class="mtop-std" placeholder="Name" type="text" name="" id="bookNameModify">
+                    <input class="mtop-std" placeholder="Author" type="text" name="" id="bookAuthorModify">
+                    <input class="mtop-std" placeholder="Publisher" type="text" name="" id="bookPublisherModify">
+                    <input class="mtop-std" placeholder="Year" type="text" name="" id="bookYearModify">
+                    <input class="mtop-std" placeholder="Summary" type="text" name="" id="bookSummaryModify">
+                    <button class="mtop-std" onclick="apiUpdateOne('books')">Patch: Edit One Book</button>
+                </div>
+
+                <div class="flex flex-d-col mtop30px">
+                    <p class="mtop-std">/api/books/deleteOne?id=</p>
+                    <input class="mtop-std" placeholder="Book ID to Delete" type="text" name="" id="bookDeleteOne">                
+                    <button class="mtop-std" onclick="apiDeleteOne('books')">Delete: One Book</button>
+                </div>
+            </div>
+
+            <!--------- BOOK INVENTORY DIV --------->
+            <div id="div-book-inventory" class="flex flex-d-col separator">
+                <p>BOOK INVENTORY - ROUTE</p>
+
+                <div class="flex flex-d-col mtop30px">
+                    <p class="mtop-std">/api/bookInventory/getBookInventories</p>
+                    <button class="mtop-std" onclick="apiGetInventories('bookInventory')">Get: Book Inventories</button>
+                </div>
+
+                <div class="flex flex-d-col mtop30px">
+                    <p class="mtop-std">/api/bookInventory/postBookInventory?bookId=</p>
+                    <input class="mtop-std" placeholder="Book ID for Inventory" type="text" name="" id="bookInventoryId">
+                    <input class="mtop-std" placeholder="Quantity" type="text" name="" id="bookInventoryQuantity">
+                    <button class="mtop-std" onclick="apiPostInventory('bookInventory')">Post: Create Book Inventory</button>
+                </div>
+
+                <div class="flex flex-d-col mtop30px">
+                    <p class="mtop-std">/api/bookInventory/updateOneInventory?id=</p>
+                    <input class="mtop-std" placeholder="Inventory ID" type="text" name="" id="bookInventoryIdEdit">
+                    <input class="mtop-std" placeholder="New Quantity" type="text" name="" id="bookInventoryQuantityEdit">
+                    <button class="mtop-std" onclick="apiUpdateOneInventory('bookInventory')">Patch: Edit Quantity</button>
+                </div>
+
+                <div class="flex flex-d-col mtop30px">
+                    <p class="mtop-std">/api/bookInventory/deleteOne?id=</p>
+                    <input class="mtop-std" placeholder="Inventory ID Delete" type="text" name="" id="bookInventoryDeleteOne">                
+                    <button class="mtop-std" onclick="apiDeleteOneInventory('bookInventory')">Delete: One Inventory</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex">
+            <!--------- E-BOOK DIV --------->
+            <div id="div-ebooks" class="flex flex-d-col separator">
+                <P>E-BOOKS - ROUTE</P>
+                <div class="flex flex-d-col mtop30px">
+                    <p class="mtop-std">/api/ebooks/getBooks?order=author</p>
+                    <button class="mtop-std" onclick="apiGet('ebooks', 'author')">Get: E-Books by Author</button>
+                    <p class="mtop-std">/api/ebooks/getBooks?order=publisher</p>
+                    <button class="mtop-std" onclick="apiGet('ebooks', 'publisher')">Get: E-Books by Publisher</button>
+                    <p class="mtop-std">/api/ebooks/getBooks?order=id</p>
+                    <button class="mtop-std" onclick="apiGet('ebooks', 'id')">Get: E-Books by ID</button>
+                </div>
+
+                <div class="flex flex-d-col mtop30px">
+                    <p class="mtop-std">/api/ebooks/postBook</p>
+                    <input class="mtop-std" placeholder="Name" type="text" name="" id="ebookName">
+                    <input class="mtop-std" placeholder="Author" type="text" name="" id="ebookAuthor">
+                    <input class="mtop-std" placeholder="Publisher" type="text" name="" id="ebookPublisher">
+                    <input class="mtop-std" placeholder="Year" type="text" name="" id="ebookYear">
+                    <input class="mtop-std" placeholder="Summary" type="text" name="" id="ebookSummary">
+                    <input class="mtop-std" placeholder="E-Book Format" type="text" name="" id="ebookFormat">
+                    <button class="mtop-std" onclick="apiPostE('ebooks')">Post: Create E-Book</button>
+                </div>
+
+                <div class="flex flex-d-col mtop30px">
+                    <p class="mtop-std">/api/ebooks/editBook?id=</p>
+                    <input class="mtop-std" placeholder="E-Book ID to Modify" type="text" name="" id="ebookIdModify">
+                    <input class="mtop-std" placeholder="Name" type="text" name="" id="ebookNameModify">
+                    <input class="mtop-std" placeholder="Author" type="text" name="" id="ebookAuthorModify">
+                    <input class="mtop-std" placeholder="Publisher" type="text" name="" id="ebookPublisherModify">
+                    <input class="mtop-std" placeholder="Year" type="text" name="" id="ebookYearModify">
+                    <input class="mtop-std" placeholder="Summary" type="text" name="" id="ebookSummaryModify">
+                    <input class="mtop-std" placeholder="E-Book Format" type="text" name="" id="ebookFormatModify">
+                    <button class="mtop-std" onclick="apiUpdateOneE('ebooks')">Patch: Edit One E-Book</button>
+                </div>
+
+                <div class="flex flex-d-col mtop30px">
+                    <p class="mtop-std">/api/ebooks/deleteOne?id=</p>
+                    <input class="mtop-std" placeholder="E-Book ID to Delete" type="text" name="" id="ebookDeleteOne">                
+                    <button class="mtop-std" onclick="apiDeleteOneE('ebooks')">Delete: One E-Book</button>
+                </div>
+            </div>
+
+            <!--------- E-BOOK INVENTORY DIV --------->
+            <div id="div-ebook-inventory" class="flex flex-d-col separator">
+                <p>E-BOOK INVENTORY - ROUTE</p>
+
+                <div class="flex flex-d-col mtop30px">
+                    <p class="mtop-std">/api/ebookInventory/getBookInventories</p>
+                    <button class="mtop-std" onclick="apiGetInventories('ebookInventory')">Get: E-Book Inventories</button>
+                </div>
+
+                <div class="flex flex-d-col mtop30px">
+                    <p class="mtop-std">/api/ebookInventory/postBookInventory?bookId=</p>
+                    <input class="mtop-std" placeholder="E-Book ID for Inventory" type="text" name="" id="ebookInventoryId">
+                    <input class="mtop-std" placeholder="Quantity" type="text" name="" id="ebookInventoryQuantity">
+                    <button class="mtop-std" onclick="apiPostInventoryE('ebookInventory')">Post: Create E-Book Inventory</button>
+                </div>
+
+                <div class="flex flex-d-col mtop30px">
+                    <p class="mtop-std">/api/ebookInventory/updateOneInventory?id=</p>
+                    <input class="mtop-std" placeholder="Inventory ID" type="text" name="" id="ebookInventoryIdEdit">
+                    <input class="mtop-std" placeholder="New Quantity" type="text" name="" id="ebookInventoryQuantityEdit">
+                    <button class="mtop-std" onclick="apiUpdateOneInventoryE('ebookInventory')">Patch: Edit Quantity</button>
+                </div>
+
+                <div class="flex flex-d-col mtop30px">
+                    <p class="mtop-std">/api/ebookInventory/deleteOne?id=</p>
+                    <input class="mtop-std" placeholder="Inventory ID Delete" type="text" name="" id="ebookInventoryDeleteOne">                
+                    <button class="mtop-std" onclick="apiDeleteOneInventoryE('ebookInventory')">Delete: One Inventory</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1 class="mb30px">Developed By Pedro Diehl</h1>
+</body>
+</html>

@@ -1,0 +1,31 @@
+{
+  "name": "book-comet",
+  "version": "1.0.0",
+  "description": "book comet code challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diehlpedro/book-comet.git"
+  },
+  "keywords": [
+    "code",
+    "challenge",
+    "book",
+    "comet"
+  ],
+  "author": "Pedro Diehl",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/diehlpedro/book-comet/issues"
+  },
+  "homepage": "https://github.com/diehlpedro/book-comet#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^14.3.2",
+    "express": "^4.17.2",
+    "mongoose": "^6.1.8"
+  }
+}

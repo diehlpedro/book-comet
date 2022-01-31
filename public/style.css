@@ -1,0 +1,296 @@
+:root {
+  --primary-color: rgb(55, 55, 55);
+  --secondary-color: rgb(40, 40, 40);
+  --third-color: rgb(237, 213, 62);
+  --fourth-color: #ffffff;
+  --white: #ffffff;
+  --black: #000000;
+  --header: #ffffff;
+  --bg: rgba(237, 214, 62, 0.03);
+}
+* {
+  font-family: 'Noto Sans Mono', monospace;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  outline: none !important;
+}
+body {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 1000px;
+}
+
+/* CUSTOM */
+.separator {
+  border: none;
+  border-radius: 0.5em;
+  background-color: rgb(245,245,245);
+  padding: 1em;
+  margin: 1em;
+}
+
+.mtop-std {
+  margin-top: 0.2em;
+}
+
+button {
+  border: none;
+  background-color: rgb(50,50,50);
+  color: white;
+  border-radius: 3px;
+  padding: 0.5em 1.5em;
+}
+
+/* BASIC */
+
+.text-align-right {
+  text-align: right;
+}
+
+/* Flex Positioning */
+.flex {
+  display: flex;
+}
+.flex-d-col {
+  flex-direction: column;
+}
+.flex-space-between {
+  justify-content: space-between;
+}
+.flex-space-around {
+  justify-content: space-around;
+}
+.flex-space-evenly {
+  justify-content: space-evenly;
+}
+.center {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Other */
+.inv {
+  display: none;
+}
+*:focus {
+  outline: none !important;
+}
+
+/* Width and Height */
+.w100 {
+  width: 100%;
+}
+.w90 {
+  width: 92%;
+}
+.h100 {
+  height: 100vh;
+}
+
+/* Fonts */
+.bold {
+  font-style: bold;
+}
+.italic {
+  font-style: italic;
+}
+.oblique {
+  font-style: oblique;
+}
+.fweight800 {
+  font-weight: 800;
+}
+.font8px {
+  font-size: 8px !important;
+}
+.font10px {
+  font-size: 10px !important;
+}
+.font12px {
+  font-size: 12px !important;
+}
+.font14px {
+  font-size: 14px !important;
+}
+.font16px {
+  font-size: 16px !important;
+}
+.font18px {
+  font-size: 18px !important;
+}
+.font20px {
+  font-size: 20px !important;
+}
+.font25px {
+  font-size: 25px !important;
+}
+.font30px {
+  font-size: 30px !important;
+}
+.font-xx-large {
+  font-size: xx-large;
+}
+.font-x-large {
+  font-size: x-large;
+}
+.font-large {
+  font-size: x-large;
+}
+.font-medium {
+  font-size: medium;
+}
+.font-small {
+  font-size: small;
+}
+.font-x-small {
+  font-size: x-small;
+}
+.font-xx-small {
+  font-size: xx-small;
+}
+
+/* Color */
+.color-primary {
+  color: var(--primary) !important;
+}
+.color-secondary {
+  color: var(--secondary) !important;
+}
+.color-third {
+  color: var(--third) !important;
+}
+.color-fourth {
+  color: var(--fourth) !important;
+}
+.color-white {
+  color: var(--white) !important;
+}
+.c-white {
+  color: #ffffff !important;
+}
+.color-black {
+  color: var(--black) !important;
+}
+
+/* Background Colors */
+.bgc-primary {
+  background-color: var(--primary);
+}
+.bgc-secondary {
+  background-color: var(--secondary);
+}
+.bgc-third {
+  background-color: var(--third);
+}
+.bgc-fourth {
+  background-color: var(--fourth);
+}
+.bgc-white {
+  background-color: var(--white);
+}
+.bgc-black {
+  background-color: var(--black);
+}
+.bgc-green {
+  background-color: rgb(22, 102, 22);
+}
+.bgc-red {
+  background-color: rgb(136, 8, 8);
+}
+.bgc-llgrey {
+  background-color: rgb(248, 248, 248);
+}
+.bgc-lgrey {
+  background-color: rgb(240, 240, 240);
+}
+.bgc-lgreyblue {
+  background-color: rgb(171, 206, 221);
+}
+
+/* Margins */
+.mtop-small {
+  margin-top: 10px;
+}
+.mb-small {
+  margin-bottom: 3px;
+}
+.zero-margin {
+  margin: 0;
+}
+.mtop5px {
+  margin-top: 5px;
+}
+.mtop10px {
+  margin-top: 10px;
+}
+.mtop15px {
+  margin-top: 15px;
+}
+.mtop20px {
+  margin-top: 20px;
+}
+.mtop30px {
+  margin-top: 30px;
+}
+.mtop50px {
+  margin-top: 50px;
+}
+.mb5px {
+  margin-bottom: 5px;
+}
+.mb10px {
+  margin-bottom: 10px;
+}
+.mb15px {
+  margin-bottom: 15px;
+}
+.mb20px {
+  margin-bottom: 20px;
+}
+.mb30px {
+  margin-bottom: 30px;
+}
+.mb50px {
+  margin-bottom: 50px;
+}
+.ml5px {
+  margin-left: 5px;
+}
+.ml10px {
+  margin-left: 10px;
+}
+.ml15px {
+  margin-left: 15px;
+}
+.ml20px {
+  margin-left: 20px;
+}
+.ml30px {
+  margin-left: 30px;
+}
+.ml50px {
+  margin-left: 50px;
+}
+.mr5px {
+  margin-right: 5px;
+}
+.mr10px {
+  margin-right: 10px;
+}
+.mr15px {
+  margin-right: 15px;
+}
+.mr20px {
+  margin-right: 20px;
+}
+.mr30px {
+  margin-right: 30px;
+}
+.mr50px {
+  margin-right: 50px;
+}
